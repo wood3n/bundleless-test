@@ -7,7 +7,8 @@
   "scripts": {
     "build:esbuild": "node esbuild.js && tsc --project tsconfig.build.json",
     "build:tsup": "tsup",
-    "build:modern": "modern build"
+    "build:modern": "modern build",
+    "build:unbuild": "unbuild"
   },
   "devDependencies": {
     "@modern-js/module-tools": "^2.58.0",
@@ -23,7 +24,8 @@
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
     "tsup": "^8.2.4",
-    "typescript": "^5.5.4"
+    "typescript": "^5.5.4",
+    "unbuild": "^2.0.0"
   },
   "peerDependencies": {
     "react": ">=17",
