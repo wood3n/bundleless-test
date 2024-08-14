@@ -28,7 +28,7 @@ bundleless 也就是不 bundle，不对 "dependencies" 以及 "peerDependencies"
 
 1. 基于 esbuild，不支持生成 umd 格式产物；
 2. 使用 mkdist 支持 bundleless，支持处理 css；
-3. 配置有点乱。
+3. 配置有点乱，对 jsx 转换无法读取到 tsconfig 里面的配置，都转换成了`React.createElement`。
 
 ## @modern-js/module-tools
 
