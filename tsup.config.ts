@@ -1,6 +1,6 @@
 import { defineConfig } from 'tsup';
 
-const entries = ['src/**/*.{ts,tsx}', '!**/*.d.ts'];
+const entries = ['src/**', '!**/*.d.ts'];
 
 export default defineConfig([
   {

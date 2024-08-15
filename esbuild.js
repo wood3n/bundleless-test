@@ -3,7 +3,7 @@ import { emptyDir } from 'fs-extra';
 import path from 'node:path';
 import glob from 'fast-glob';
 
-const entries = glob.sync(['src/**/*.{ts,tsx}', '!**/*.d.ts']);
+const entries = glob.sync(['src/**', '!**/*.d.ts']);
 
 const configs = [
   {

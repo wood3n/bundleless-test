@@ -1,5 +1,4 @@
 import { defineBuildConfig } from 'unbuild';
-import glob from 'fast-glob';
 
 export default defineBuildConfig([
   {
