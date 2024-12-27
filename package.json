@@ -8,10 +8,13 @@
     "build:esbuild": "node esbuild.js && tsc --project tsconfig.build.json",
     "build:tsup": "tsup",
     "build:modern": "modern build",
-    "build:unbuild": "unbuild"
+    "build:unbuild": "unbuild",
+    "build:rslib": "rslib build"
   },
   "devDependencies": {
     "@modern-js/module-tools": "^2.58.0",
+    "@rsbuild/plugin-react": "^1.1.0",
+    "@rslib/core": "^0.2.2",
     "@types/fs-extra": "^11.0.4",
     "@types/node": "^22.2.0",
     "@types/react": "^18.3.3",
