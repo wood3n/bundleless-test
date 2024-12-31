@@ -1,50 +1,56 @@
-import { defineConfig } from '@rslib/core';
-import { pluginReact } from '@rsbuild/plugin-react';
+import { defineConfig } from "@rslib/core";
+import { pluginReact } from "@rsbuild/plugin-react";
 
 export default defineConfig({
   // 编译 jsx 需要配置插件
   plugins: [pluginReact()],
   output: {
-    target: 'web',
+    target: "web",
   },
   source: {
     // bundleless 需要设置入口为目录
     entry: {
-      index: './src/**',
+      // 忽略 dts 文件
+      index: "src/**/!(*.d.ts)",
     },
-    tsconfigPath: './tsconfig.build.json',
+    tsconfigPath: "./tsconfig.build.json",
   },
   lib: [
     {
-      format: 'esm',
+      format: "esm",
       bundle: false,
-      syntax: 'es2015',
+      syntax: "es2015",
       output: {
         distPath: {
-          root: 'dist/es',
-        }
+          root: "dist/es",
+        },
       },
       dts: true,
     },
     {
-      format: 'cjs',
+      format: "cjs",
       bundle: false,
-      syntax: 'es2015',
+      syntax: "es2015",
       output: {
         distPath: {
-          root: 'dist/lib',
-        }
+          root: "dist/lib",
+        },
       },
     },
     {
-      format: 'umd',
-      umdName: 'myLib',
-      syntax: 'es2015',
+      format: "umd",
+      umdName: "myLib",
+      syntax: "es2015",
+      source: {
+        entry: {
+          index: "./src/index.ts",
+        },
+      },
       output: {
         distPath: {
-          root: 'dist/umd',
-        }
+          root: "dist/umd",
+        },
       },
     },
-  ]
+  ],
 });

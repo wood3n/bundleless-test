@@ -12,6 +12,15 @@ bundleless 也就是不 bundle，不对 "dependencies" 以及 "peerDependencies"
 2. 配置简单，上手即用，提供的`buildPreset`就能满足打包需求，无需编写额外的 nodejs 文件处理代码；
 3. `module-tools`还内置了生成模块文档，以及 changelog 的能力，所以`module-tools`比较侧重于一个工具解决工具库开发的场景。
 
+## rslib
+
+⭐⭐⭐⭐⭐
+
+rslib 是基于 rust 编写的下一代库构建工具，支持四种 JavaScript 文件的输出格式：esm、cjs、umd 和 mf。
+
+1. 基于 swc 编译代码；
+2. 配置简单，和`@modern-js/module-tools`相比，没有内置文档编写，changelog 等能力，能力更专注于构建库。如果你希望使用一个简单的打包库的工具，推荐使用`rslib`。
+
 ## tsup
 
 ⭐⭐⭐⭐
@@ -34,13 +43,3 @@ bundleless 也就是不 bundle，不对 "dependencies" 以及 "peerDependencies"
 
 1. 基于 esbuild，不支持生成 umd 格式产物；
 2. 配置有点乱，对 jsx 转换无法读取到 tsconfig 里面的配置，都转换成了`React.createElement`。
-
-## rslib
-
-⭐⭐⭐
-
-rslib 是基于 rust 编写的下一代库构建工具，支持四种 JavaScript 文件的输出格式：esm、cjs、umd 和 mf。
-
-1. 基于 swc 编译代码；
-2. 配置简单，和`@modern-js/module-tools`相比，没有内置文档编写，changelog 等能力，能力更专注于构建库；
-3. 长远来看，rslib 有望取代 tsup，但是目前 rslib 仍存在一些 bug 需要解决。
